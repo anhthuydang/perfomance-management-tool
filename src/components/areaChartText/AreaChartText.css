@@ -1,0 +1,39 @@
+.areaText {
+    display: flex;
+    margin-bottom: 250px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+}
+
+.areaText ul {
+    display: flex;
+    margin-left: 30px;
+}
+
+.areaText li {
+    margin: 0 2px;
+}
+
+.areaText li:first-of-type {
+    opacity: 0.5;
+}
+
+.areaText button {
+    padding: 8px 12px;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    background: #2d71bf;
+    transition: all 200ms ease-in-out;
+}
+
+.areaText button:hover,
+.areaText button:focus,
+.areaText .clickedButton {
+    background: #19426c;
+}

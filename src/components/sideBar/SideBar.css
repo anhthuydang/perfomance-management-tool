@@ -1,0 +1,28 @@
+.sideBar {
+    background: #143c6d;
+    width: 40px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    
+}
+.sideBar ul {
+    margin-top: 100px;
+}
+.sideBar li:hover,
+.sideBar li:focus {
+    background: #0d2d52;
+}
+.sideBar button {
+    background: transparent;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #000;
+    color: #fff;
+}
+.sideBar li:first-of-type button {
+    border-top: 1px solid #000;
+}

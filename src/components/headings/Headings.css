@@ -1,0 +1,48 @@
+.headingWrapper {
+    margin-top: 80px;
+}
+
+h1 {
+    padding: 0 10%;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #716765;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.subHeadingWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #edecec;
+    width: 100vw;
+    height: 40px;
+    padding: 0 10%;
+    color: #2d71bf;
+}
+
+.subHeading {
+    display: flex;
+    color: #716765;
+}
+
+h2 {
+    font-weight: 400;
+    margin-left: 10px;
+    font-size: 1.4rem;
+}
+
+.subHeadingWrapper button {
+    background-color: transparent;
+    border: none;
+    transition: 200ms all ease-in;
+}
+
+.subHeadingWrapper button:hover,
+.subHeadingWrapper button:focus {
+    transform: scale(1.3);
+}
+
+
+

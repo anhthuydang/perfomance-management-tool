@@ -1,0 +1,38 @@
+.filterWrapper {
+    color: #564b49;
+}
+
+h4 {
+    font-weight: 600;
+}
+
+.filterTextContainer {
+    width: 45%;
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    padding: 15px 15px 10px 15px;
+}
+
+.infoFlex {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.square {
+    width: 10px;
+    height: 10px;
+}
+
+.infoFlex:first-of-type .square {
+    background: #4e9ff3;
+}
+
+.infoFlex:last-of-type .square {
+    background: #f4f4f4;
+}
+
+.infoFlex p {
+    margin-right: 5px;
+    margin-left: 10px;
+    line-height: 13px;
+}

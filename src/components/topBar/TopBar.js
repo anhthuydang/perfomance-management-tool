@@ -9,7 +9,7 @@ const TopBar = () => {
         <nav className="topBar">
             <p>Diagnostic Tool</p>
             <div>
-               <p>Logged in as General User </p>
+               <p>Logged in as General User |</p>
                <ul>
                   <li>
                      <button>

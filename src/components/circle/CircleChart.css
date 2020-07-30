@@ -7,10 +7,9 @@
     padding: 20px;
     text-align: center;
 }
+
 .circle:hover,
-.circle:focus {
-    background: rgba(41, 159, 250, 0.1);
-}
+.circle:focus,
 .clickedChart {
     background: rgba(41, 159, 250, 0.1);
 }

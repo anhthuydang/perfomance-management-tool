@@ -26,7 +26,7 @@ class CircleChart extends Component {
               name: {
                 offsetY: 20, //move labels under dataLabels
                 show: true,
-                color: "#888",
+                color: "#716765",
                 fontSize: "13px"
               },
               value: {
@@ -42,23 +42,10 @@ class CircleChart extends Component {
           }
         },
         chart: {
-          offsetX: -60,
+          offsetX: -60, //move chart to the right
         }
       },
     }
-  }
-  
-  //function to change background color of chart
-  handleClick = (e) => {
-    const clickedChart = document.querySelector(".clickedChart");
-        if (clickedChart !== null) {
-            clickedChart.classList.remove("clickedChart");
-        } 
-
-        const newChart = document.getElementById(e.target.id);
-        if (newChart !== null) {
-          newChart.classList.add("clickedChart");
-        }
   }
 
   render() {
@@ -70,7 +57,8 @@ class CircleChart extends Component {
         options={this.state.optionsRadial} 
         series={this.state.optionsRadial.series} 
         type="radialBar" 
-        width="240"
+        width="200%"
+        // width="240"
         onClick={() => {updateChart(name)}}
         />
         

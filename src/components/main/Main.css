@@ -2,18 +2,17 @@ main {
     color: #716765;
 }
 .wrapper {
-    max-width: 1280px;
+    max-width: 1300px;
     margin: 0 auto;
     width: 90%;
     margin-top: 50px;
 }
 
-
-/* MAIN  */
 .chartsContainer {
     display: flex;
     justify-content: space-between;
 }
+
 /* Area Chart */
 .areaChart {
   width: 50%;

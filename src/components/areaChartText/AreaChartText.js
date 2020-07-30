@@ -3,11 +3,12 @@ import './AreaChartText.css';
 
 class AreaChartText extends Component {
     changeColor = (e) => {
+        //remove background color of the previously clicked button
         const clickedButton = document.querySelector(".clickedButton");
         if (clickedButton !== null) {
             clickedButton.classList.remove("clickedButton");
         } 
-
+        //change background color of the clicked button
         const newButton = document.getElementById(e.target.id);
         newButton.classList.add("clickedButton");
     }

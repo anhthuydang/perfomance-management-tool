@@ -10,9 +10,9 @@ import './Main.css';
 
 class Main extends Component {
   constructor(props) {
-    super(props);
+   super(props);
 
-    this.state = {
+   this.state = {
       //data
       areaData: {
         "Quality Score":[
@@ -171,13 +171,13 @@ class Main extends Component {
               "vsly":0
            }
         ]
-     },
+   },
 
-     // trend name state
-     chosenObject:'', 
+   // trend name state
+   chosenObject:'', 
 
-     //Area Chart states
-     options : {
+   //Area Chart states
+   options : {
       fill: {
         type: "gradient",
         gradient: {
@@ -192,8 +192,13 @@ class Main extends Component {
       },
       yaxis: {
          show: false,
-      }
-    },
+      },
+      dataLabels: {
+         formatter: function (val)  {
+            return `${val}%`
+         },
+      },
+   },
     series: [{
         data: [],
       }]
@@ -201,21 +206,51 @@ class Main extends Component {
   }
 }
 
-// componentDidMount() {
-//    const newAreaData = {...this.state.areaData};
-//       const newScoreArray = [];
-//       const newDateArray = [];
-//       newAreaData['Knowledge'].map((value) => {
-//          newScoreArray.push(value.score);
-//          newDateArray.push(value.date);
-//       });
-//       this.setState({
-//          scoreArray: newScoreArray,
-//          dateArray: newDateArray,
-//       })
-// }
+//set default values for areachart
+componentDidMount() {
+   const defaultAreaData = {...this.state.areaData};
+      const defaultScoreArray = [];
+      const defaultDateArray = [];
+      const defaultTrend = Object.keys(defaultAreaData)[0];
+      const defaultObject = Object.values(defaultAreaData)[0];
+      
+      defaultObject.map(value => {
+         return (
+            defaultScoreArray.push(value.score)
+         && defaultDateArray.push(value.date)
+         )
+      })
+      //set default states for areachart
+      this.setState({
+         chosenObject: defaultTrend,
+         options: {
+           ...this.state.options,
+           xaxis: {
+             ...this.state.options.xaxis,
+             categories: defaultDateArray
+           },
+         },
+         series: [{
+           ...this.state.series,
+           data: defaultScoreArray
+         }]
+       })
+}
 
+// function to update area chart and change background color of the clicked circle chart
 updateChart = (chosenObj) => {
+   // remove background color of the previously clicked chart
+   const clickedChart = document.querySelector(".clickedChart");
+   if (clickedChart !== null) {
+         clickedChart.classList.remove("clickedChart");
+        }; 
+   //add background color to the clicked chart    
+   const newChart = document.getElementById(chosenObj);
+   if (newChart !== null) {
+         newChart.classList.add("clickedChart");
+        };
+
+   //get data of the chosen circle chart to display on area chart
    const newAreaData = {...this.state.areaData};
    for (let data in newAreaData) {
       if (data === chosenObj) {
@@ -227,7 +262,7 @@ updateChart = (chosenObj) => {
             && newDateArray.push(item.date)
             )
          });
-         
+         //set state of the area chart 
          this.setState({
             chosenObject: data,
             options: {
@@ -257,7 +292,8 @@ updateChart = (chosenObj) => {
          <div className="wrapper">
             <div className="chartsContainer">
                <CircleContainer 
-               updateChart={this.updateChart}/>
+               updateChart={this.updateChart}
+               />
                <div className="areaChart">
                  <AreaChartText chosenObject={this.state.chosenObject}/>
                   <Chart 

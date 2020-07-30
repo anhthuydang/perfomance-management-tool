@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/performance-management-tool/static/css/main.7ac06ee9.chunk.css",
+    "main.js": "/performance-management-tool/static/js/main.9eeb85ec.chunk.js",
+    "main.js.map": "/performance-management-tool/static/js/main.9eeb85ec.chunk.js.map",
+    "runtime-main.js": "/performance-management-tool/static/js/runtime-main.1c2a76de.js",
+    "runtime-main.js.map": "/performance-management-tool/static/js/runtime-main.1c2a76de.js.map",
+    "static/js/2.cf6ed179.chunk.js": "/performance-management-tool/static/js/2.cf6ed179.chunk.js",
+    "static/js/2.cf6ed179.chunk.js.map": "/performance-management-tool/static/js/2.cf6ed179.chunk.js.map",
+    "index.html": "/performance-management-tool/index.html",
+    "precache-manifest.98864fda7458bf900e0a9b7b8a3b400c.js": "/performance-management-tool/precache-manifest.98864fda7458bf900e0a9b7b8a3b400c.js",
+    "service-worker.js": "/performance-management-tool/service-worker.js",
+    "static/css/main.7ac06ee9.chunk.css.map": "/performance-management-tool/static/css/main.7ac06ee9.chunk.css.map",
+    "static/js/2.cf6ed179.chunk.js.LICENSE.txt": "/performance-management-tool/static/js/2.cf6ed179.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c2a76de.js",
+    "static/js/2.cf6ed179.chunk.js",
+    "static/css/main.7ac06ee9.chunk.css",
+    "static/js/main.9eeb85ec.chunk.js"
+  ]
+}

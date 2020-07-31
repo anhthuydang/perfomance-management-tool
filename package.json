@@ -1,6 +1,6 @@
 {
-  "homepage": "https://anhthuydang.github.io/performance-management-tool",
-  "name": "test-graphs",
+  "homepage": ".",
+  "name": "performance-management-tool",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

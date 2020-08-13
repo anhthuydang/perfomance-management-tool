@@ -206,35 +206,37 @@ class Main extends Component {
   }
 }
 
-//set default values for areachart
+//set default values for area chart
 componentDidMount() {
    const defaultAreaData = {...this.state.areaData};
-      const defaultScoreArray = [];
-      const defaultDateArray = [];
-      const defaultTrend = Object.keys(defaultAreaData)[0];
-      const defaultObject = Object.values(defaultAreaData)[0];
-      
-      defaultObject.map(value => {
-         return (
-            defaultScoreArray.push(value.score)
-         && defaultDateArray.push(value.date)
-         )
-      })
-      //set default states for areachart
-      this.setState({
-         chosenObject: defaultTrend,
-         options: {
-           ...this.state.options,
-           xaxis: {
-             ...this.state.options.xaxis,
-             categories: defaultDateArray
-           },
+   const defaultScoreArray = [];
+   const defaultDateArray = [];
+   const defaultTrend = Object.keys(defaultAreaData)[0];
+   const defaultObject = Object.values(defaultAreaData)[0];
+   
+   
+   defaultObject.map(value => {
+      return (
+         defaultScoreArray.push(value.score)
+      && defaultDateArray.push(value.date)
+      )
+   })
+
+   //set default states for areachart
+   this.setState({
+      chosenObject: defaultTrend,
+      options: {
+         ...this.state.options,
+         xaxis: {
+            ...this.state.options.xaxis,
+            categories: defaultDateArray
          },
-         series: [{
-           ...this.state.series,
-           data: defaultScoreArray
-         }]
-       })
+      },
+      series: [{
+         ...this.state.series,
+         data: defaultScoreArray
+      }]
+   })
 }
 
 // function to update area chart and change background color of the clicked circle chart
@@ -246,9 +248,7 @@ updateChart = (chosenObj) => {
         }; 
    //add background color to the clicked chart    
    const newChart = document.getElementById(chosenObj);
-   if (newChart !== null) {
-         newChart.classList.add("clickedChart");
-        };
+   newChart.classList.add("clickedChart");
 
    //get data of the chosen circle chart to display on area chart
    const newAreaData = {...this.state.areaData};

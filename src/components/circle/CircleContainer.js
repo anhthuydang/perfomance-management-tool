@@ -4,7 +4,6 @@ import Filters from '../filters/Filters';
 import './CircleContainer.css'
 
 class CircleContainer extends Component {
-
   constructor(props) {
     super(props);
 

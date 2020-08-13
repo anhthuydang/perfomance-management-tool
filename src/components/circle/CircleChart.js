@@ -3,7 +3,6 @@ import Chart from 'react-apexcharts';
 import './CircleChart.css';
 
 class CircleChart extends Component {
-
   constructor(props) {
     super(props);
 

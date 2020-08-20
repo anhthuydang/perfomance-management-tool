@@ -48,9 +48,10 @@ class CircleChart extends Component {
   }
 
   render() {
-    const {name, sample, updateChart} = this.props;
+    const {name, sample, updateChart, circleId} = this.props;
+    
     return (
-      <div className="circle" id={name} onClick={this.handleClick}>
+      <div className={circleId === name ? "circle clickedChart" : "circle"} id={name}>
         
         <Chart 
         options={this.state.optionsRadial} 
@@ -62,6 +63,7 @@ class CircleChart extends Component {
         />
         
         <p>Sample: {sample}</p>
+
       </div>
     );
   }

@@ -174,7 +174,11 @@ class Main extends Component {
    },
 
    // trend name state
-   chosenObject:'', 
+   chosenObject:'',
+   
+   //circle chart background state
+   // clickedChart: false,
+   circleId: '',
 
    //Area Chart states
    options : {
@@ -214,7 +218,6 @@ componentDidMount() {
    const defaultTrend = Object.keys(defaultAreaData)[0];
    const defaultObject = Object.values(defaultAreaData)[0];
    
-   
    defaultObject.map(value => {
       return (
          defaultScoreArray.push(value.score)
@@ -222,8 +225,11 @@ componentDidMount() {
       )
    })
 
-   //set default states for areachart
+   //set default states when page loads
    this.setState({
+      //set default state for background color of the first circle chart displayed on page load
+      circleId: defaultTrend,
+      //set default states for areachart
       chosenObject: defaultTrend,
       options: {
          ...this.state.options,
@@ -241,15 +247,12 @@ componentDidMount() {
 
 // function to update area chart and change background color of the clicked circle chart
 updateChart = (chosenObj) => {
-   // remove background color of the previously clicked chart
-   const clickedChart = document.querySelector(".clickedChart");
-   if (clickedChart !== null) {
-         clickedChart.classList.remove("clickedChart");
-        }; 
-   //add background color to the clicked chart    
-   const newChart = document.getElementById(chosenObj);
-   newChart.classList.add("clickedChart");
 
+   //set states to change background color of the clicked circle chart
+   this.setState({
+      circleId: chosenObj,
+   })
+   
    //get data of the chosen circle chart to display on area chart
    const newAreaData = {...this.state.areaData};
    for (let data in newAreaData) {
@@ -293,6 +296,7 @@ updateChart = (chosenObj) => {
             <div className="chartsContainer">
                <CircleContainer 
                updateChart={this.updateChart}
+               circleId={this.state.circleId}
                />
                <div className="areaChart">
                  <AreaChartText chosenObject={this.state.chosenObject}/>

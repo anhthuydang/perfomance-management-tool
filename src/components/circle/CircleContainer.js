@@ -51,6 +51,7 @@ class CircleContainer extends Component {
   }
 
   render() {
+    const {updateChart, circleId} = this.props;
     return (
       <div className="circleChartSection">
         <Filters />
@@ -62,7 +63,8 @@ class CircleContainer extends Component {
             score={this.state.gaugeData[index].score}
             name={this.state.gaugeData[index].name}
             sample={this.state.gaugeData[index].sample}
-            updateChart={this.props.updateChart}
+            updateChart={updateChart}
+            circleId={circleId}
             />
             )
           })}

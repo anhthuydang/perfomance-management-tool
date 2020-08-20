@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import './AreaChartText.css';
 
 class AreaChartText extends Component {
-   
+
+    //NEED TO REFACTOR THIS FUNCTION! Use state instead of manipulating DOM directly!
     changeColor = (e) => {
+        console.log(e.target.textContent)
         //remove background color of the previously clicked button
         const clickedButton = document.querySelector(".clickedButton");
         if (clickedButton !== null) {

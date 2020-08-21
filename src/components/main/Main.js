@@ -248,7 +248,7 @@ componentDidMount() {
 // function to update area chart and change background color of the clicked circle chart
 updateChart = (chosenObj) => {
 
-   //set states to change background color of the clicked circle chart
+   //set state to change background color of the clicked circle chart
    this.setState({
       circleId: chosenObj,
    })
